@@ -1,0 +1,60 @@
+:root {
+  --f52: 142, 142, 142;
+  --h1d: 255, 255, 255;
+  --de5: 255, 255, 255;
+  --d69: 0, 149, 246;
+  --b86: 88, 195, 34;
+  --i30: 237, 73, 86;
+  --d62: 255, 255, 255;
+  --e4f: 54, 54, 54;
+  --a72: 255, 255, 255;
+  --ie3: 142, 142, 142;
+  --c37: 237, 73, 86;
+  --f24: 0, 149, 246;
+  --jbb: 53, 121, 234;
+  --eca: 255, 255, 255;
+  --jb7: 0, 0, 0;
+  --fa7: 224, 241, 255;
+  --ba8: 168, 168, 168;
+  --eac: 237, 73, 86;
+}
+
+.icon_search {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -405px -183px;
+  width: 23px;
+  height: 23px;
+}
+
+.icon_home {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -405px -2px;
+  width: 22px;
+  height: 21px;
+}
+
+.icon_chat {
+  background: url("../img/ig-sprite.png") no-repeat -189px -353px;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_compass {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -371px -353px;
+  width: 22px;
+  height: 22px;
+}
+
+.icon_heart {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -405px -236px;
+  width: 22px;
+  height: 20px;
+}
+
+.profile_img img {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
