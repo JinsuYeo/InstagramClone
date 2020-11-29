@@ -62,6 +62,9 @@
   top: 50%;
   transform: translateY(-50%);
   left: 32%;
+  pointer-events: inherit;
+  cursor: default;
+  outline: none;
 }
 
 #header .header-center button {
@@ -73,6 +76,8 @@
   top: 50%;
   left: 54%;
   transform: translateY(-50%);
+  pointer-events: none;
+  outline: none;
 }
 
 #header .header-center .delete {
@@ -116,6 +121,7 @@
 
 #contents_container .story_container {
   margin-top: 30px;
+  margin-bottom: 25px;
   border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-radius: 3px;
   width: 615px;
