@@ -19,11 +19,11 @@
   --eac: 237, 73, 86;
 }
 
-.icon_search {
+.icon_mini_search {
   display: inline-block;
-  background: url("../img/ig-sprite.png") no-repeat -405px -183px;
-  width: 23px;
-  height: 23px;
+  background: url("../img/ig-sprite.png") no-repeat -355px -340px;
+  width: 10px;
+  height: 10px;
 }
 
 .icon_home {
@@ -57,4 +57,25 @@
   width: 24px;
   height: 24px;
   border-radius: 12px;
+}
+
+.story_img {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat 0 -222px;
+  width: 64px;
+  height: 64px;
+}
+
+.icon_next {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -321px -69px;
+  width: 30px;
+  height: 30px;
+}
+
+.icon_delete {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -48px -387px;
+  width: 14px;
+  height: 14px;
 }
