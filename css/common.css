@@ -34,6 +34,7 @@
 }
 
 .icon_chat {
+  display: inline-block;
   background: url("../img/ig-sprite.png") no-repeat -189px -353px;
   width: 22px;
   height: 22px;
@@ -78,4 +79,34 @@
   background: url("../img/ig-sprite.png") no-repeat -48px -387px;
   width: 14px;
   height: 14px;
+}
+
+.content_img {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -64px -288px;
+  width: 58px;
+  height: 58px;
+  zoom: 0.7;
+}
+
+.icon_more {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -68px -390px;
+  width: 14px;
+  height: 4px;
+}
+
+.icon_save {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -408px -54px;
+  width: 16px;
+  height: 20px;
+}
+
+.icon_mini_heart {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -405px -236px;
+  width: 22px;
+  height: 20px;
+  zoom: 0.5;
 }

@@ -174,16 +174,22 @@
                         	<button type="button" class="next_story"><span class="icon_next"></span></button>
                     </section>
 
-                    <section class="content_ box">
+                    <section class="content_box">
                         <header class="profile_container">
-                        <div class="profile_img">
-                            <img src="img/47116126_279759392898017_1104228408105107456_n.jpg" alt="">
-                            </div>
-                            <div class="profile_name">
-                                <span>momo_s2s2</span>
+                            <div class="profile">
+                                
+                                <div class="profile_img">
+                                    <img src="img/47116126_279759392898017_1104228408105107456_n.jpg" alt="">
+                                    <div class="content_img">
+                                    </div>
+                                </div>
+                                
+                                <div class="profile_name">
+                                    <span>momo_s2s2</span>
+                                </div>
                             </div>
                             <div class="more">
-                                <span class="more">
+                                <span class="icon_more"></span>
                                     <ul>
                                         <li>신고</li>
                                         <li>팔로우 취소</li>
@@ -193,7 +199,7 @@
                                         <li>퍼가기</li>
                                         <li>취소</li>
                                     </ul>
-                                </span>
+                                
                             </div>
                         </header>
 
@@ -204,9 +210,12 @@
                             </a>
                         </div>
                         <div class="btn_container">
-                            <div class="like_btn"></div>
-                            <div class="comment_btn"></div>
-                            <div class="share_btn"></div>
+                            <div class="left_btn">
+                                <div class="like_btn"><span class="icon_heart"></span></div>
+                                <div class="comment_btn"><span class="icon_chat"></span></div>
+                                <div class="share_btn"><i class="far fa-paper-plane"></i></span></div>
+                            </div>
+                            <div class="save_btn"><span class="icon_save"></span></div>
                         </div>
                         <div class="ajax_field">
                             <div class="like">
@@ -232,6 +241,7 @@
                                         <div class="name">_____sso.l</div>
                                         <div class="text_field">좋다</div>
                                     </div>
+                                    <div class="comment_like"><span class="icon_mini_heart"></span></div>
                                 </div>
                             </div>
                             <div class="id">
@@ -240,14 +250,16 @@
                                         <div class="name">kjs821</div>
                                         <div class="text_field">누구랑 간겨😆</div>
                                     </div>
+                                    <div class="comment_like"><span class="icon_mini_heart"></span></div>
                                 </div>
                             </div>
-                            <span class="comment_time">13시간 전</span>
+                            <div class="comment_time">13시간 전</div>
                         </div>
 
                         <div class="comment_input">
                             <div class="input_container">
-
+                                <input type="text" placeholder="댓글 달기...">
+                                <button class="send_message">게시</button>
                             </div>
                         </div>
                     </section>
