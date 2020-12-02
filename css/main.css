@@ -461,3 +461,8 @@ html {
   font-weight: 700;
   opacity: 0.5;
 }
+
+.content_box .comment_input .input_container button.add {
+  opacity: 1;
+  cursor: pointer;
+}
