@@ -110,3 +110,10 @@
   height: 20px;
   zoom: 0.5;
 }
+
+.icon_red_heart {
+  display: inline-block;
+  background: url("../img/ig-sprite.png") no-repeat -84px -354px;
+  width: 24px;
+  height: 21px;
+}
