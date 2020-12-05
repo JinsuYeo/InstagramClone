@@ -4,7 +4,7 @@ const modal = document.querySelector('.modal')
 const close = document.querySelector('.close')
 const modalOverlay = document.querySelector('.modal_overlay')
 const likeBtn = document.querySelector('.icon_heart')
-
+const likeCount = document.querySelector('#like_count-37')
 // const textInput = document.querySelectorAll('.id_input')
 // const textInputBtn = document.querySelectorAll('.send_message')
 
@@ -65,6 +65,25 @@ function likeClick (e) {
     if(elem.matches('[data-name="like"]')) {
         elem.classList.toggle('icon_heart')
         elem.classList.toggle('icon_red_heart')
+        
+        // $.ajax({
+        //     type: 'POST',
+        //     url: './data/like.json',
+        //     data: '',
+        //     dataType: 'json',
+        //     success: (response)=> {
+        //         let likeCount = document.querySelector('#like_count-37')
+        //         likeCount.innerHTML = response.like_count
+        //     },
+        //     error: ()=>{
+        //         alert('로그인이 필요합니다.');
+        //         window.location.replace('index.html')
+        //     }
+
+        // })
+        
+        const current = parseInt(likeCount.innerHTML, 10)
+        likeCount.innerHTML = current + 1 + ' 명';
     }
 } 
 
