@@ -53,7 +53,7 @@ if (elem.matches('[data-name="id_input"]')) {
 }
 }
 
-function likeClick (e) {
+function feedClick (e) {
     let elem = e.target
     e.stopPropagation();
 
@@ -85,6 +85,26 @@ function likeClick (e) {
         const current = parseInt(likeCount.innerHTML, 10)
         likeCount.innerHTML = current + 1 + ' 명';
     }
+    else if (elem.matches('[data-name="mini_like"]')) {
+        elem.classList.toggle('icon_mini_heart')
+        elem.classList.toggle('icon_mini_red_heart')
+    }
+    else if (elem.matches('[data-name="id_input"]')) {
+        $.ajax({
+
+                    type: 'POST',
+                    url: './data/comment.html',
+                    data: '',
+                    dataType: 'html',
+                    success: (data)=> {
+                        document.querySelector('.comment_container').insertAdjacentHTML("beforeend", data)
+                    },
+                    error: ()=>{
+                        alert('로그인이 필요합니다.');
+                        window.location.replace('index.html')
+                    }
+        })
+    }
 } 
 
 
@@ -94,7 +114,7 @@ modalOverlay.addEventListener('click', closeModal)
 
 feed.addEventListener('keypress', commentKeypress)
 
-feed.addEventListener('click', likeClick)
+feed.addEventListener('click', feedClick)
 
 
 // function canComment (e) {

@@ -549,11 +549,10 @@ html {
 }
 
 #right_box .friends_container .header div{
-  font-weight: 400;
   color: rgba(var(--f75, 38, 38, 38), 1);
   font-size: 12px;
   font-weight: 700;
-  
+  cursor: pointer;
 }
 
 
@@ -574,7 +573,7 @@ html {
 
 #right_box .friends_container .friend_box .profile_name_box{
   margin-left: 12px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 15px;
 }
 
