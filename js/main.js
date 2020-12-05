@@ -11,7 +11,18 @@ const likeBtn = document.querySelector('.icon_heart')
 
 
 function openModal (e) {
-    modal.classList.remove('hidden')
+
+    let elem = e.target;
+    e.stopPropagation();
+
+   console.log(elem)
+
+   
+
+    if (e.target.matches('[data-name="more"]')) {
+        modal.classList.remove('hidden')
+    }
+    
 }
 
 
@@ -20,7 +31,7 @@ function closeModal (e) {
 }
 
 
-function delegation (e) {
+function commentKeypress (e) {
     let elem = e.target;
     e.stopPropagation();
 
@@ -52,19 +63,19 @@ function likeClick (e) {
     
 
     if(elem.matches('[data-name="like"]')) {
-        elem.classList.remove('icon_heart')
-        elem.classList.add('icon_red_heart')
+        elem.classList.toggle('icon_heart')
+        elem.classList.toggle('icon_red_heart')
     }
 } 
 
 
-more.addEventListener('click', openModal)
+feed.addEventListener('click', openModal)
 close.addEventListener('click', closeModal)
 modalOverlay.addEventListener('click', closeModal)
 
-feed.addEventListener('keypress', delegation)
+feed.addEventListener('keypress', commentKeypress)
 
-likeBtn.addEventListener('click', likeClick)
+feed.addEventListener('click', likeClick)
 
 
 // function canComment (e) {
