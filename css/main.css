@@ -86,24 +86,27 @@ html {
   top: 50%;
   left: 54%;
   transform: translateY(-50%);
-  pointer-events: none;
   outline: none;
+  z-index: 3;
 }
 
 #header .header-center .delete {
   display: none;
-  pointer-events: none;
 }
 
 #header .header-center input:focus ~ .delete {
-  display: inline-block;
+  display: flex;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 8px;
   cursor: inherit;
-  pointer-events: inherit;
 }
+
+#header .header-center input:focus ~ .delete span{
+  align-items: center;
+}
+
 
 #header .header-right {
   width: 200px;
@@ -432,6 +435,11 @@ html {
   color: rgba(var(--f52, 142, 142, 142), 1);
 }
 
+.content_box .comments_container .delete {
+  margin-right: 30px;
+  cursor: pointer;
+}
+
 .content_box .comment_input {
   width: 100%;
   height: 65px;
@@ -484,7 +492,6 @@ html {
   width: 100%;
   padding: 12px 0 0 28px;
   color: rgba(var(--f75, 38, 38, 38), 1);
-
 }
 
 #right_box .profile_container {

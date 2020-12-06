@@ -5,9 +5,59 @@ const close = document.querySelector('.close')
 const modalOverlay = document.querySelector('.modal_overlay')
 const likeBtn = document.querySelector('.icon_heart')
 const likeCount = document.querySelector('#like_count-37')
+const txt = document.querySelector('.id_input')
+const rightBox = document.querySelector('#right_box')
+// const header = document.querySelector('#header')
+// const headerInput = document.querySelector('#search_box')
+// const headerDelete = document.querySelector('.submit')
+
 // const textInput = document.querySelectorAll('.id_input')
 // const textInputBtn = document.querySelectorAll('.send_message')
 
+
+rightBox.style.left = `${innerWidth * .5 + 150}px`;
+function resizeFunc() {
+    rightBox.style.left = `${innerWidth * .5 + 150}px`;
+}
+
+function addMorePostAjax (data) {
+    feed.insertAdjacentHTML('beforeend', data)
+}
+
+
+
+function callMorePostAjax (pageValue) {
+    $.ajax({
+        type: 'POST',
+        url: 'data/post.html',
+        data: pageValue,
+        dataType: 'html',
+        success: addMorePostAjax,
+        error: ()=>{
+            alert('문제가 발생했습니다!')
+        }
+})
+}
+
+function scrollFunc () {
+    let documentHeight = document.body.scrollHeight;
+    let scrollHeight = pageYOffset + window.innerHeight;
+
+    if (scrollHeight >= documentHeight - 1) {
+
+        let pager = document.querySelector('#page');
+        let pageValue = document.querySelector('#page').value;
+
+        pager.value = parseInt(pageValue) + 1;
+
+        if(pageValue > 5) {
+            pager.value = pageValue
+         } else {
+             callMorePostAjax(pageValue);
+         }
+    }
+
+}
 
 
 function openModal (e) {
@@ -93,19 +143,46 @@ function feedClick (e) {
         $.ajax({
 
                     type: 'POST',
-                    url: './data/comment.html',
+                    url: 'data/comment.html',
                     data: '',
                     dataType: 'html',
                     success: (data)=> {
-                        document.querySelector('.comment_container').insertAdjacentHTML("beforeend", data)
+                        document.querySelector('.comment_time').insertAdjacentHTML('beforebegin', data)
                     },
                     error: ()=>{
                         alert('로그인이 필요합니다.');
                         window.location.replace('index.html')
                     }
         })
+
+        txt.value = '';
     }
+    else if (elem.matches('[data-name="delete"]')){
+        if(confirm('정말 삭제하시겠습니까?') === true) {
+
+        $.ajax({
+            type: 'POST',
+            url: 'data/delete.json',
+            data: '',
+            dataType: 'json',
+            success: (response)=>{
+                if(response.status){
+                    let comt = document.querySelector('.comment-37')
+                    comt.remove();
+                }
+            },
+            error: ()=>{
+                alert('로그인이 필요합니다.')
+            }
+        })
+    }
+}
 } 
+
+// function deleteInput () {
+//     headerInput.value = '';
+// }
+
 
 
 feed.addEventListener('click', openModal)
@@ -116,7 +193,10 @@ feed.addEventListener('keypress', commentKeypress)
 
 feed.addEventListener('click', feedClick)
 
+window.addEventListener('resize', resizeFunc)
+window.addEventListener('scroll', scrollFunc)
 
+// headerDelete.addEventListener('click', deleteInput)
 // function canComment (e) {
 //     for( let i = 0; i < textInputBtn.length; i++) {
 //         textInputBtn[i].classList.add('add')
